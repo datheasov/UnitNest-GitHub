@@ -1,0 +1,11 @@
+# Dataset configuration for YOLOv5/YOLOv8
+path: D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset  # Base dataset directory
+train: D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/yolo_train/images  # Train dataset images
+val: D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/yolo_valid/images  # Validation dataset images
+test: D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/yolo_test/images  # (Optional) Test dataset images
+
+# Number of object classes
+nc: 1  # Only detecting 'MeterNumber'
+
+# Class labels
+names: ['MeterNumber']  # Single class: Meter readings

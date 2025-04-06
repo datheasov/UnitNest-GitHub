@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['MeterNumber']
+
+roboflow:
+  workspace: theasov-tyzp9
+  project: water_electric_meter
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/theasov-tyzp9/water_electric_meter/dataset/1
