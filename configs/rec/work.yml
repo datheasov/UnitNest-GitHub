@@ -1,0 +1,104 @@
+Global:
+  use_gpu: True
+  distributed: False
+  epoch_num: 200                   # Increased for better training
+  log_smooth_window: 20
+  print_batch_step: 10
+  save_model_dir: "D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/PaddleOCR/output3/rec_en_number_lite"
+  save_epoch_step: 3
+  eval_batch_step: [0, 500]         # More frequent validation
+  cal_metric_during_train: True
+  pretrained_model: "D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/pre_train_model/en_number_mobile_v2.0_rec_train/best_accuracy"
+  checkpoints: ""
+  save_inference_dir: "D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/PaddleOCR/inference/rec_en_number_lite"
+  use_visualdl: True              # Enable real-time tracking
+  infer_img: ""
+  character_dict_path: "D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/PaddleOCR/ppocr/utils/en_dict.txt"
+  max_text_length: 25             # Adjust if your meter readings are shorter (e.g., 10)
+  infer_mode: False
+  use_space_char: True
+
+Optimizer:
+  name: Adam
+  beta1: 0.9
+  beta2: 0.999
+  lr:
+    name: Cosine
+    learning_rate: 0.0005         # Lower learning rate
+  regularizer:
+    name: L2
+    factor: 0.00001
+
+Architecture:
+  model_type: rec
+  algorithm: CRNN
+  Transform:
+    name: "TPS"
+    num_fiducial: 20
+    loc_lr: 0.001         # Learning rate for the localization network; adjust as needed
+    model_name: "TPS"       # You can set this to "TPS" or another string as required by your version
+  Backbone:
+    name: MobileNetV3
+    scale: 0.5
+    model_name: small
+    small_stride: [1, 2, 2, 2]
+  Neck:
+    name: SequenceEncoder
+    encoder_type: rnn
+    hidden_size: 48
+  Head:
+    name: CTCHead
+    fc_decay: 0.00001
+
+Loss:
+  name: CTCLoss
+
+PostProcess:
+  name: CTCLabelDecode
+
+Metric:
+  name: RecMetric
+  main_indicator: acc
+
+Train:
+  dataset:
+    name: SimpleDataSet
+    delimiter: " "                # Use space as the delimiter (matches your label file)
+    data_dir: "D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/ocr_train/image"
+    label_file_list: ["D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/ocr_train/fixed_label_cleaned.txt"]
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: False
+      - RecAug: {}              # Data augmentation (only for training)
+      - CTCLabelEncode: {}
+      - RecResizeImg:
+          image_shape: [3, 32, 320]  # Adjust as needed for your image size
+      - KeepKeys:
+          keep_keys: ['image', 'label', 'length']
+  loader:
+    shuffle: True
+    batch_size_per_card: 256    # Reduce if necessary for your dataset size or GPU memory
+    drop_last: True
+    num_workers: 0
+
+Eval:
+  dataset:
+    name: SimpleDataSet
+    delimiter: " "                # Use the same delimiter for evaluation
+    data_dir: "D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/ocr_valid/image"
+    label_file_list: ["D:/A_Capstone1/UnitNest_MeterDetection_Yolov8_ptv3/dataset/ocr_valid/fixed_label_cleaned.txt"]
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: False
+      - CTCLabelEncode: {}
+      - RecResizeImg:
+          image_shape: [3, 32, 320]  # Keep resolution consistent with training
+      - KeepKeys:
+          keep_keys: ['image', 'label', 'length']
+  loader:
+    shuffle: False
+    drop_last: False
+    batch_size_per_card: 256
+    num_workers: 0

@@ -1,0 +1,97 @@
+Global:
+  use_gpu: True
+  epoch_num: 100
+  log_smooth_window: 20
+  print_batch_step: 10
+  save_model_dir: ./output/rec_en_number_lite
+  save_epoch_step: 3
+  eval_batch_step: [0, 2000]
+  cal_metric_during_train: True
+  pretrained_model:  # <--- If you have a pretrained model path, put it here. e.g. ./pre_train_model/en_number_mobile_v2.0_rec_train/best_accuracy
+  checkpoints:
+  save_inference_dir:
+  use_visualdl: False
+  infer_img:
+  character_dict_path: ppocr/utils/en_dict.txt   # or use a custom dict with just digits
+  max_text_length: 25
+  infer_mode: False
+  use_space_char: True
+
+Optimizer:
+  name: Adam
+  beta1: 0.9
+  beta2: 0.999
+  lr:
+    name: Cosine
+    learning_rate: 0.001
+  regularizer:
+    name: 'L2'
+    factor: 0.00001
+
+Architecture:
+  model_type: rec
+  algorithm: CRNN
+  Transform:
+  Backbone:
+    name: MobileNetV3
+    scale: 0.5
+    model_name: small
+    small_stride: [1, 2, 2, 2]
+  Neck:
+    name: SequenceEncoder
+    encoder_type: rnn
+    hidden_size: 48
+  Head:
+    name: CTCHead
+    fc_decay: 0.00001
+
+Loss:
+  name: CTCLoss
+
+PostProcess:
+  name: CTCLabelDecode
+
+Metric:
+  name: RecMetric
+  main_indicator: acc
+
+Train:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./dataset/ocr_train/
+    label_file_list: ["./dataset/ocr_labels/tr.txt"]
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: False
+      - RecAug:  # Basic data augmentation for text recognition
+      - CTCLabelEncode:
+      - RecResizeImg:
+          image_shape: [3, 32, 320]
+      - KeepKeys:
+          keep_keys: ['image', 'label', 'length']
+  loader:
+    shuffle: True
+    batch_size_per_card: 256
+    drop_last: True
+    num_workers: 8
+
+Eval:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./dataset/ocr_valid/
+    label_file_list: ["./dataset/ocr_labels/eval_list.txt"]
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: False
+      - CTCLabelEncode:
+      - RecResizeImg:
+          image_shape: [3, 32, 320]
+      - KeepKeys:
+          keep_keys: ['image', 'label', 'length']
+  loader:
+    shuffle: False
+    drop_last: False
+    batch_size_per_card: 256
+    num_workers: 8

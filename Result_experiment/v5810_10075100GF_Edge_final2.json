@@ -1,0 +1,302 @@
+[
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "03258",
+        "Accuracy": "97.92%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "0115",
+        "Accuracy": "99.88%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "02132",
+        "Accuracy": "95.41%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "04833",
+        "Accuracy": "93.53%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01364",
+        "Accuracy": "99.16%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "23740",
+        "Accuracy": "99.17%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "2017",
+        "Accuracy": "99.6%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01478",
+        "Accuracy": "99.76%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "06832",
+        "Accuracy": "88.24%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "02697",
+        "Accuracy": "99.0%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01669",
+        "Accuracy": "98.77%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01823",
+        "Accuracy": "99.19%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "1908",
+        "Accuracy": "99.74%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "02198",
+        "Accuracy": "99.63%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "2383",
+        "Accuracy": "99.51%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01104",
+        "Accuracy": "99.17%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01331",
+        "Accuracy": "93.97%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "1200",
+        "Accuracy": "99.44%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "00734",
+        "Accuracy": "99.45%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01004",
+        "Accuracy": "94.48%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "02097",
+        "Accuracy": "99.45%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01801",
+        "Accuracy": "99.23%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "2817",
+        "Accuracy": "97.35%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01805",
+        "Accuracy": "98.2%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01215",
+        "Accuracy": "99.68%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "02145",
+        "Accuracy": "98.78%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01448",
+        "Accuracy": "95.89%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "01204",
+        "Accuracy": "99.22%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "01311",
+        "Accuracy": "99.61%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "01405",
+        "Accuracy": "97.3%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0273",
+        "Accuracy": "97.09%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0173",
+        "Accuracy": "99.42%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "N/A",
+        "Accuracy": "0.0%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0316",
+        "Accuracy": "99.71%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0134",
+        "Accuracy": "99.29%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0232",
+        "Accuracy": "95.86%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0001",
+        "Accuracy": "93.89%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0047",
+        "Accuracy": "99.57%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0131",
+        "Accuracy": "99.67%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0176",
+        "Accuracy": "99.78%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0182",
+        "Accuracy": "98.21%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0265",
+        "Accuracy": "99.73%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "N/A",
+        "Accuracy": "0.0%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0099",
+        "Accuracy": "99.32%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0126",
+        "Accuracy": "98.27%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0195",
+        "Accuracy": "99.05%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0146",
+        "Accuracy": "92.47%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0127",
+        "Accuracy": "95.72%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0156",
+        "Accuracy": "98.78%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0129",
+        "Accuracy": "98.04%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "0088",
+        "Accuracy": "99.12%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "N/A",
+        "Accuracy": "0.0%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "9800",
+        "Accuracy": "99.39%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0113",
+        "Accuracy": "99.38%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "N/A",
+        "Accuracy": "0.0%"
+    },
+    {
+        "Meter Type": "Electricity",
+        "Meter Number": "0260",
+        "Accuracy": "98.2%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0137",
+        "Accuracy": "99.65%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0095",
+        "Accuracy": "99.26%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0117",
+        "Accuracy": "99.53%"
+    },
+    {
+        "Meter Type": "Water",
+        "Meter Number": "0097",
+        "Accuracy": "99.33%"
+    }
+]
